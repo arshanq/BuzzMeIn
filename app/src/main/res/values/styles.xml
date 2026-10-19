@@ -1,0 +1,13 @@
+<resources>
+    <color name="accent">#FF2E7D32</color>
+    <color name="icon_bg">#FF2E7D32</color>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/accent</item>
+        <item name="android:colorPrimaryDark">#FF1B5E20</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+    <style name="InCallTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:windowBackground">#FF101820</item>
+    </style>
+</resources>

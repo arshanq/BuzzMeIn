@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.arshaq.buzzmein'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.arshaq.buzzmein'
+        minSdk 29
+        targetSdk 34
+        versionCode 2
+        versionName '1.1'
+    }
+
+    // Release signing is read from keystore.properties (gitignored). Without it, the release
+    // build falls back to the debug key so the project still builds from a fresh clone.
+    def keystoreProps = new Properties()
+    def keystoreFile = rootProject.file('keystore.properties')
+    if (keystoreFile.exists()) keystoreFile.withInputStream { keystoreProps.load(it) }
+
+    signingConfigs {
+        release {
+            if (keystoreFile.exists()) {
+                storeFile rootProject.file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig keystoreFile.exists() ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}

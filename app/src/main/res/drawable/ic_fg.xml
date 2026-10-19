@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- door -->
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M38,30h26v48h-26z" />
+    <path android:fillColor="#FF2E7D32"
+        android:pathData="M57,54m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <!-- buzz waves -->
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="3" android:fillColor="#00000000"
+        android:pathData="M70,44 Q76,54 70,64" />
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="3" android:fillColor="#00000000"
+        android:pathData="M76,38 Q85,54 76,70" />
+</vector>
